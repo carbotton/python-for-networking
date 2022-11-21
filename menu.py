@@ -196,18 +196,18 @@ def opcion3():
     from email.mime.text import MIMEText
     mail_content = "Estadísticas:\n\tOpcion 1: "+str(cont_opc1)+" veces/times\n\tOpcion 2: "+str(cont_opc2)+" veces/times\n\tOpcion 3: "+str(cont_opc3)+" veces/times\n\tOpcion 0: "+str(cont_opc0)+" veces/times"
     #The mail addresses and password
-    sender_address = 'htlogicalis@outlook.com'
-    sender_pass = 'RemediationTool'
-    receiver_address = 'automation@la.logicalis.com'
+    sender_address = 'someOther@mail.com'
+    sender_pass = 'pass'
+    receiver_address = 'some@mail.com'
     #Setup the MIME
     message = MIMEMultipart()
     message['From'] = sender_address
     message['To'] = receiver_address
-    message['Subject'] = 'Hackathon - EPIC 3 - Grupo 18'   #The subject line
+    message['Subject'] = 'subject'   #The subject line
     #The body and the attachments for the mail
     message.attach(MIMEText(mail_content, 'plain'))
     #Create SMTP session for sending the mail
-    session = smtplib.SMTP('smtp.office365.com', 587) #use gmail with port
+    session = smtplib.SMTP('smtp.office365.com', 587) 
     session.starttls() #enable security
     session.login(sender_address, sender_pass) #login with mail_id and password
     text = message.as_string()
